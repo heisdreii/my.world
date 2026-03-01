@@ -119,14 +119,12 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:2.5rem;
-z-index:1000;
-animation:fadeOut 1s forwards 1s;
-box-shadow:0 0 80px white inset;
+z-index:4000;
+box-shadow:0 0 100px white inset;
+opacity:1;
+transition:opacity 0.6s ease;
 }
 
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden}
-}
 
 .gallery{
 column-count:2;
@@ -168,7 +166,7 @@ z-index:3000;
 }
 
 .modal-content{
-background:white;
+background:pink;
 padding:20px;
 border-radius:20px;
 max-width:90%;
@@ -202,6 +200,10 @@ position:fixed;
 top:15px;
 right:15px;
 z-index:10;
+}
+
+.page2{
+background:#fff0f5;
 }
 
 /* ===== PAGE 3 ===== */

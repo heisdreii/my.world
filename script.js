@@ -104,3 +104,25 @@ function startHearts(){
         setTimeout(()=>heart.remove(),6000);
     },400);
 }
+
+/* ===============================
+   PAGE 2 INTRO CONTROL
+================================ */
+
+window.addEventListener("DOMContentLoaded", () => {
+    const intro = document.querySelector(".intro");
+
+    if(intro){
+        // Force it visible first
+        intro.style.opacity = "1";
+
+        setTimeout(() => {
+            intro.style.opacity = "0";
+
+            setTimeout(() => {
+                intro.style.display = "none";
+            }, 600);
+
+        }, 1200);
+    }
+});
