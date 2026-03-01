@@ -1,0 +1,268 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pacifico',cursive;overflow-x:hidden}
+
+/* ===== PAGE 1 BACKGROUND ===== */
+.background{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+z-index:-2;
+overflow:hidden;
+filter:blur(6px);
+}
+
+.strip{
+width:50%;
+display:flex;
+flex-direction:column;
+animation-duration:40s;
+animation-timing-function:linear;
+animation-iteration-count:infinite;
+}
+
+.left{animation-name:scrollDown}
+.right{animation-name:scrollUp}
+
+@keyframes scrollDown{
+from{transform:translateY(-50%)}
+to{transform:translateY(0)}
+}
+@keyframes scrollUp{
+from{transform:translateY(0)}
+to{transform:translateY(-50%)}
+}
+
+.brick{height:220px}
+.brick img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.offset{margin-top:100px}
+
+.overlay-dark{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+z-index:-1;
+}
+
+/* ===== CONTENT CENTER ===== */
+.content{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:5rem;
+text-shadow:0 0 20px hotpink,0 0 40px pink,0 0 60px white;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+}
+
+input{
+margin-top:25px;
+padding:12px 20px;
+border-radius:30px;
+border:none;
+outline:none;
+}
+
+button{
+margin-top:15px;
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:lightpink;
+cursor:pointer;
+transition:0.3s;
+}
+button:hover{transform:scale(1.1)}
+
+.hint{
+font-family:'Great Vibes',cursive;
+margin-top:10px;
+}
+
+.error{
+color:#ff4d4d;
+margin-top:8px;
+animation:shake 0.3s;
+}
+
+@keyframes shake{
+0%,100%{transform:translateX(0)}
+25%{transform:translateX(-5px)}
+75%{transform:translateX(5px)}
+}
+
+/* ===== PAGE 2 ===== */
+.intro{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle,white,lightgray,gray);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2.5rem;
+z-index:1000;
+animation:fadeOut 1s forwards 1s;
+box-shadow:0 0 80px white inset;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden}
+}
+
+.gallery{
+column-count:2;
+column-gap:15px;
+padding:20px;
+}
+
+.card{
+break-inside:avoid;
+margin-bottom:15px;
+cursor:pointer;
+transition:0.3s;
+}
+.card:hover{transform:scale(1.02)}
+
+.card img{
+width:100%;
+border-radius:15px;
+}
+
+.short{color:gray}
+.full{
+display:none;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+border-radius:20px;
+max-width:90%;
+width:350px;
+text-align:center;
+animation:pop 0.35s ease;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+transform:scale(0.8);
+animation:pop 0.35s forwards;
+}
+
+@keyframes pop{
+to{transform:scale(1)}
+}
+
+.next{
+position:fixed;
+top:15px;
+right:15px;
+z-index:10;
+}
+
+/* ===== PAGE 3 ===== */
+.page3{
+background:url('../assets/IMG-117.jpg') center/cover no-repeat fixed;
+}
+
+.page3-overlay{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(6px);
+}
+
+.final-content{
+position:relative;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.final-content h1{
+font-family:'Great Vibes',cursive;
+font-size:3.5rem;
+}
+
+.heart-btn{
+width:80px;
+height:80px;
+background:lightpink;
+border-radius:50%;
+margin-top:20px;
+}
+
+.press{font-size:0.8rem}
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall 6s linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);opacity:0}
+}
+
+@media(min-width:768px){
+.gallery{column-count:3}
+.title{font-size:6rem}
+}
+/* ===== PAGE TRANSITION ===== */
+.page-transition{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+top:0;
+left:0;
+z-index:5000;
+opacity:1;
+pointer-events:none;
+transition:opacity 0.8s ease;
+}
+
+body.loaded .page-transition{
+opacity:0;
+}
+
+body.fade-out .page-transition{
+opacity:1;
+}
