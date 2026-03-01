@@ -106,14 +106,16 @@ function startHearts(){
 }
 
 /* ===============================
-   PAGE 2 INTRO CONTROL
+   PAGE 2 INTRO FIX (FINAL)
 ================================ */
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("pageshow", function(event) {
+
     const intro = document.querySelector(".intro");
 
     if(intro){
-        // Force it visible first
+
+        intro.style.display = "flex";
         intro.style.opacity = "1";
 
         setTimeout(() => {
@@ -125,4 +127,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
         }, 1200);
     }
+
 });
