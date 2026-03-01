@@ -1,7 +1,8 @@
 /* ===============================
    PAGE LOAD FADE IN
 ================================ */
-window.addEventListener("load", () => {
+window.addEventListener("pageshow", () => {
+    document.body.classList.remove("fade-out");
     document.body.classList.add("loaded");
 });
 
