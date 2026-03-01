@@ -193,7 +193,7 @@ z-index:10;
 
 /* ===== PAGE 3 ===== */
 .page3{
-background:url('../assets/IMG-117.jpg') center/cover no-repeat fixed;
+background:url('IMG-117.jpg') center/cover no-repeat fixed;
 }
 
 .page3-overlay{
